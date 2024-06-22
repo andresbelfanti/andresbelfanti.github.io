@@ -1,4 +1,7 @@
-
+import * as THREE from '/three';
+import { GLTFLoader } from '/GLTFLoaders';
+import { RGBELoader } from '/RGBELoader';
+import { OrbitControls } from '/OrbitControls';
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
