@@ -1,4 +1,4 @@
-import {three } from '/three.js';
+import * as THREE from '/Three.js';
 import { GLTFLoader } from '/GLTFLoader.js';
 import { RGBELoader } from '/RGBELoader.js';
 import { OrbitControls } from '/OrbitControls.js';
