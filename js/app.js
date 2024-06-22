@@ -1,4 +1,5 @@
-var controls = new OrbitControls( camera, renderer.domElement );
+
+import { OrbitControls } from './js/OrbitControls.js';
 
 var APP = {
 
@@ -9,6 +10,17 @@ var APP = {
 
 		var loader = new THREE.ObjectLoader();
 		var camera, scene;
+
+		controls = new OrbitControls( camera, renderer.domElement );
+		//controls.addEventListener( 'change', render ); // use if there is no animation loop
+		controls.minDistance = 2;
+		controls.maxDistance = 200;
+		controls.target.set( 0, 0, - 0.2 );
+		controls.autoRotate = false;
+		controls.autoRotateSpeed = 1;
+		controls.update();
+		window.addEventListener( 'resize', onWindowResize );
+		window.addEventListener( 'pointermove', onPointerMove );
 
 		var events = {};
 
@@ -144,6 +156,23 @@ var APP = {
 			}
 
 		}
+		function onPointerMove( event ) {
+									
+			pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+			pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+			// calculate pointer position in normalized device coordinates
+			// (-1 to +1) for both components
+								// update the picking ray with the camera and pointer position
+		raycaster.setFromCamera( pointer, camera );
+		// calculate objects intersecting the picking ray
+		const intersects = raycaster.intersectObjects( scene.children );
+
+		}
+
+		
+		}
+
 
 		var time, startTime, prevTime;
 
