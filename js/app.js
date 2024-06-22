@@ -1,3 +1,5 @@
+var controls = new OrbitControls( camera, renderer.domElement );
+
 var APP = {
 
 	Player: function () {
