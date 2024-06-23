@@ -144,7 +144,6 @@ var OrbitControls = function ( object, domElement ) {
 
 		// so camera.up is the orbit axis
 		var quat = new Quaternion().setFromUnitVectors( object.up, new Vector3( 0, 1, 0 ) );
-		var quatInverse = quat.clone().inverse();
 
 		var lastPosition = new Vector3();
 		var lastQuaternion = new Quaternion();
@@ -208,7 +207,6 @@ var OrbitControls = function ( object, domElement ) {
 			offset.setFromSpherical( spherical );
 
 			// rotate offset back to "camera-up-vector-is-up" space
-			offset.applyQuaternion( quatInverse );
 
 			position.copy( scope.target ).add( offset );
 
