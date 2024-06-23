@@ -30,6 +30,7 @@ var APP = {
 
 			this.setScene( loader.parse( json.scene ) );
 			this.setCamera( loader.parse( json.camera ) );
+			var controls = new OrbitControls( camera, renderer.domElement );
 
 			events = {
 				init: [],
