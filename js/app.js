@@ -28,9 +28,9 @@ var APP = {
 			if ( project.toneMapping !== undefined ) renderer.toneMapping = project.toneMapping;
 			if ( project.toneMappingExposure !== undefined ) renderer.toneMappingExposure = project.toneMappingExposure;
 
-			this.setCamera( loader.parse( json.camera ) ); // estos elementos nuevos
-			var controls = new OrbitControls( camera, renderer.domElement ); // este tambien
-			
+			this.setScene( loader.parse( json.scene ) );
+			this.setCamera( loader.parse( json.camera ) );
+
 			events = {
 				init: [],
 				start: [],
