@@ -1,7 +1,7 @@
-import * as THREE from '/three';
-import { GLTFLoader } from '/GLTFLoaders';
-import { RGBELoader } from '/RGBELoader';
-import { OrbitControls } from '/OrbitControls';
+import * as THREE from 'three.js';
+import { GLTFLoader } from 'GLTFLoader.js';
+import { RGBELoader } from 'RGBELoader.js';
+import { OrbitControls } from 'OrbitControls.js';
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
